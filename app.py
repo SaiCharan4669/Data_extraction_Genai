@@ -1,3 +1,22 @@
+
+def process_receipt(image,user_prompt):
+
+    image_path = os.path.join(UPLOAD_DIR, "uploaded_receipt.png")
+    image.save(image_path)
+    system_prompt = """
+               You are a specialist in comprehending receipts.
+               Input images in the form of receipts will be provided to you,
+               and your task is to respond to questions based on the content of the input image.
+               """
+
+    # Call the gemini_output function
+    output = gemini_output(image_path, system_prompt, user_prompt)
+
+
+    return output
+
+
+
 # Create Gradio interface
 import gradio as gr
 with gr.Blocks() as app:
