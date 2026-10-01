@@ -19,6 +19,7 @@ def process_receipt(image,user_prompt):
 
 # Create Gradio interface
 import gradio as gr
+import os
 with gr.Blocks() as app:
     gr.Markdown("##  Data Extraction from invoices and handwritten files")
     gr.Markdown("Upload a receipt image and provide a custom prompt for extracting information.")
